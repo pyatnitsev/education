@@ -32,7 +32,7 @@ class FileUserPersist implements UserPersistInterface
 
         foreach ($rawUsers as $item) {
             if ($item['login'] === $login) {
-                return new User($item['login'], $item['password'], $item['password'], DateTimeImmutable::createFromFormat('d.m.Y H:i:s', $item['createdAt']));
+                return new User(strtolower($item['login']), $item['password'], $item['password'], DateTimeImmutable::createFromFormat('d.m.Y H:i:s', $item['createdAt']));
             }
         }
 

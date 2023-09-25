@@ -20,7 +20,7 @@ class User
 
     public function getLogin(): string
     {
-        return $this->login;
+        return strtolower($this->login);
     }
 
     public function getPassword(): string
